@@ -7,10 +7,10 @@ type ILayoutProps = {
 
 const Layout = ({ children }: ILayoutProps) => {
   return (
-    <div>
+    <>
       <Header />
-      <main>{children}</main>
-    </div>
+      <main className="h-full">{children}</main>
+    </>
   );
 };
 

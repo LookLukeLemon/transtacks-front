@@ -5,6 +5,13 @@ import MiaLogo from "public/images/mia.svg";
 import NycLogo from "public/images/nyc.svg";
 import { PrimitiveAtom, useAtom, useAtomValue } from "jotai";
 import { RecipientAndAmountPair, selectedTokenAtom } from "common/store";
+import {
+  TOKEN_MIA_V2,
+  TOKEN_MIA_V2_DISPLAY,
+  TOKEN_NYC_V2_DISPLAY,
+  TOKEN_STX,
+  TOKEN_STX_DISPLAY,
+} from "common/Constants";
 
 export type AmountInputProps = {
   atom: PrimitiveAtom<RecipientAndAmountPair>;
@@ -14,9 +21,9 @@ const TokenImageDisplay = () => {
   const selectedToken = useAtomValue(selectedTokenAtom);
 
   const tokenLogo =
-    selectedToken === "stx"
+    selectedToken === TOKEN_STX
       ? StxLogo
-      : selectedToken === "mia-v2"
+      : selectedToken === TOKEN_MIA_V2
       ? MiaLogo
       : NycLogo;
 
@@ -34,11 +41,11 @@ const TokenSymbolDisplay = () => {
   const selectedToken = useAtomValue(selectedTokenAtom);
 
   const tokenLogo =
-    selectedToken === "stx"
-      ? "STX"
-      : selectedToken === "mia-v2"
-      ? "MIA"
-      : "NYC";
+    selectedToken === TOKEN_STX
+      ? TOKEN_STX_DISPLAY
+      : selectedToken === TOKEN_MIA_V2
+      ? TOKEN_MIA_V2_DISPLAY
+      : TOKEN_NYC_V2_DISPLAY;
 
   return <span>{tokenLogo}</span>;
 };
@@ -55,6 +62,7 @@ const AmountInput = ({ atom }: AmountInputProps) => {
       <TokenImageDisplay />
       <input
         type="number"
+        step="any"
         min={1}
         placeholder="0.000000"
         className="input input-bordered input-md w-full"

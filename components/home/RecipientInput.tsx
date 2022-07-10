@@ -22,6 +22,7 @@ const RecipientInput = ({ atom, idx }: RecipientInputProps) => {
       <span>Recipient</span>
       <input
         type="text"
+        required
         placeholder="e.g. ST3WD1H8FR8X5P5EHW9JV2R74RDG2YGYCY4MB0ZV6"
         className="input w-full input-bordered input-md"
         value={item.recipient}

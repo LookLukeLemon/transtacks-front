@@ -1,9 +1,5 @@
 import InstructionAlert from "components/home/InstructionAlert";
 import Orchestra from "components/home/Orchestra";
-import PlusButton from "components/home/PlusButton";
-import PlusTenButton from "components/home/PlusTenButton";
-import RecipientAndAmountPairDisplay from "components/home/RecipientAndAmountPairDisplay";
-import SelectTokenGroup from "components/home/SelectTokenGroup";
 import type { NextPage } from "next";
 import Head from "next/head";
 
@@ -13,10 +9,12 @@ const Home: NextPage = () => {
       <Head>
         <title>Multi sender for KCV DAO</title>
       </Head>
-      <div className="bg-base-200 min-h-screen">
-        <div className="2xl:container mx-auto px-4 grid py-8 gap-8">
+      <div className="bg-base-200 h-full">
+        <div className="2xl:container mx-auto px-4 py-8 gap-8 flex flex-col h-full">
           <InstructionAlert />
-          <Orchestra />
+          <div className="flex-1">
+            <Orchestra />
+          </div>
         </div>
       </div>
     </>

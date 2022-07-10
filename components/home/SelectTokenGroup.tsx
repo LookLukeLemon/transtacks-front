@@ -1,3 +1,4 @@
+import { TOKEN_MIA_V2, TOKEN_NYC_V2, TOKEN_STX } from "common/Constants";
 import { selectedTokenAtom } from "common/store";
 import { useAtom } from "jotai";
 import React from "react";
@@ -13,10 +14,10 @@ const SelectTokenGroup = () => {
         <button
           className={classNames(
             "btn",
-            selectedToken === "stx" && "btn-warning "
+            selectedToken === TOKEN_STX && "btn-warning "
           )}
           onClick={() => {
-            setSelectedToken("stx");
+            setSelectedToken(TOKEN_STX);
           }}
         >
           STX
@@ -24,10 +25,10 @@ const SelectTokenGroup = () => {
         <button
           className={classNames(
             "btn",
-            selectedToken === "mia-v2" && "btn-warning"
+            selectedToken === TOKEN_MIA_V2 && "btn-warning"
           )}
           onClick={() => {
-            setSelectedToken("mia-v2");
+            setSelectedToken(TOKEN_MIA_V2);
           }}
         >
           MIA-v2
@@ -35,10 +36,10 @@ const SelectTokenGroup = () => {
         <button
           className={classNames(
             "btn",
-            selectedToken === "nyc-v2" && "btn-warning"
+            selectedToken === TOKEN_NYC_V2 && "btn-warning"
           )}
           onClick={() => {
-            setSelectedToken("nyc-v2");
+            setSelectedToken(TOKEN_NYC_V2);
           }}
         >
           NYC-v2
