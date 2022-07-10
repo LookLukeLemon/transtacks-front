@@ -11,10 +11,10 @@ export type RecipientInputProps = {
 const RemoveButton = ({ atom, onRemove }) => {
   return (
     <button
-      className="btn btn-outline btn-circle"
+      className="btn btn-outline btn-sm md:btn-md"
       onClick={() => onRemove(atom)}
     >
-      <MdRemove className="w-5 h-5" />
+      <MdRemove className="w-3 h-3 md:w-4 md:h-4" />
     </button>
   );
 };
