@@ -11,7 +11,8 @@ export const TOKEN_NYC_V2_DISPLAY = "NYC";
 export const MULTI_SEND_DEPLOYER_TESTNET =
   "STWP70QKWE3XV3RB4K9637KCX7T3D84DPZRACSGR";
 export const MULTI_SEND_CONTRACT_TESTNET = "multi-sender-dope";
-export const MULTI_SEND_DEPLOYER_MAINNET = "";
+export const MULTI_SEND_DEPLOYER_MAINNET =
+  "SP177TEFB91GWS8ZRJW6T2RGRPJQNQX8CNV7N7X3Y";
 export const MULTI_SEND_CONTRACT_MAINNET = "multi-sender-dope";
 export const MULTI_SEND_STX = "transfer-stx-many";
 export const MULTI_SEND_FT = "transfer-ft-many";

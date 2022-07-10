@@ -7,7 +7,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Multi sender for KCV DAO</title>
+        <title>Multi sender</title>
       </Head>
       <div className="bg-base-200 h-full">
         <div className="2xl:container mx-auto px-4 py-8 gap-8 flex flex-col h-full">
