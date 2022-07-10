@@ -121,7 +121,10 @@ const useContract = () => {
             });
           },
         });
-      } else if (selectedToken === (TOKEN_MIA_V2 || TOKEN_NYC_V2)) {
+      } else if (
+        selectedToken === TOKEN_MIA_V2 ||
+        selectedToken === TOKEN_NYC_V2
+      ) {
         const recipients = [];
         const assetInfo =
           selectedToken === TOKEN_MIA_V2
