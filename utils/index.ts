@@ -1,4 +1,4 @@
-export const formatByThousandComma = (number, fractionDigits = 2) => {
+export const formatByThousandComma = (number: number, fractionDigits = 2) => {
   return Intl.NumberFormat("en-US", {
     minimumFractionDigits: fractionDigits,
     maximumFractionDigits: fractionDigits,
@@ -6,7 +6,7 @@ export const formatByThousandComma = (number, fractionDigits = 2) => {
 };
 
 export const formatByThousandCommaWithSeperateFraction = (
-  number,
+  number: number,
   minimumFractionDigits = 2,
   maximumFractionDigits = 2
 ) => {
@@ -16,7 +16,7 @@ export const formatByThousandCommaWithSeperateFraction = (
   }).format(number);
 };
 
-export const formatCurrency = (number) => {
+export const formatCurrency = (number: number) => {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
@@ -24,7 +24,7 @@ export const formatCurrency = (number) => {
 };
 
 export const formatAbbreviated = (
-  number,
+  number: number,
   minimumFractionDigits = 0,
   maximumFractionDigits = 2
 ) => {
@@ -35,15 +35,15 @@ export const formatAbbreviated = (
   }).format(number);
 };
 
-export const sleep = (milliseconds) => {
+export const sleep = (milliseconds: number) => {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
 };
 
-export const classNames = (...classes) => {
+export const classNames = (...classes: any[]) => {
   return classes.filter(Boolean).join(" ");
 };
 
-export const cutNumber = (number, maxDecimals = 2, maxLength = 15) => {
+export const cutNumber = (number: number, maxDecimals = 2, maxLength = 15) => {
   if (number.toString().indexOf(".") === -1) {
     return +number.toString().slice(0, maxLength);
   } else {
@@ -55,14 +55,14 @@ export const cutNumber = (number, maxDecimals = 2, maxLength = 15) => {
   }
 };
 
-export const toFlooredAt = (sourceNumber, at) => {
+export const toFlooredAt = (sourceNumber: number, at: number) => {
   const temp1 = sourceNumber * Math.pow(10, at);
   const temp2 = Math.floor(temp1);
   return temp2 / Math.pow(10, at);
 };
 
 export const truncateMiddle = (
-  source,
+  source: string,
   sliceStart = 10,
   sliceEnd = 10,
   dots = 3
