@@ -29,7 +29,8 @@ const TokenImageDisplay = () => {
 
   return (
     <span className="flex gap-x-2">
-      Amount
+      <div className="hidden md:block">Amount</div>
+
       <div className="relative h-5 w-5">
         <Image src={tokenLogo} alt="" layout="fill" objectFit="cover" />
       </div>
@@ -47,7 +48,7 @@ const TokenSymbolDisplay = () => {
       ? TOKEN_MIA_V2_DISPLAY
       : TOKEN_NYC_V2_DISPLAY;
 
-  return <span>{tokenLogo}</span>;
+  return <span className="hidden md:flex">{tokenLogo}</span>;
 };
 
 const AmountInput = ({ atom }: AmountInputProps) => {
@@ -58,14 +59,14 @@ const AmountInput = ({ atom }: AmountInputProps) => {
   };
 
   return (
-    <label className="input-group input-group-md">
+    <label className="input-group input-group-sm md:input-group-md">
       <TokenImageDisplay />
       <input
         type="number"
         step="any"
         min={1}
         placeholder="0.000000"
-        className="input input-bordered input-md w-full"
+        className="input input-sm md:input-md w-full"
         value={item.amount}
         onChange={handleChangeAmount}
       />

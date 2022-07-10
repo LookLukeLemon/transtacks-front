@@ -8,9 +8,12 @@ type PlusTenProps = {
 
 const PlusTenButton = ({ onAddTen }: PlusTenProps) => {
   return (
-    <button className="btn btn-warning gap-2" onClick={onAddTen}>
+    <button
+      className="btn btn-warning gap-2 btn-sm md:btn-md"
+      onClick={onAddTen}
+    >
       <GoPlus />
-      ADD 10
+      <div className="hidden md:flex">ADD</div>10
     </button>
   );
 };

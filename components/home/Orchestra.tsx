@@ -40,7 +40,7 @@ const Orchestra = () => {
     );
 
   return (
-    <div className="gap-8 flex flex-col">
+    <div className="gap-4 md:gap-8 flex flex-col">
       <div className="flex">
         <div className="flex-1">
           <SelectTokenGroup />
@@ -57,7 +57,7 @@ const Orchestra = () => {
         </div>
       ) : (
         <form
-          className="h-full flex flex-col gap-8"
+          className="h-full flex flex-col gap-4 md:gap-8"
           onSubmit={(e) => {
             e.stopPropagation();
             e.preventDefault();

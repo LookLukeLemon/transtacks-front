@@ -9,7 +9,7 @@ const Layout = ({ children }: ILayoutProps) => {
   return (
     <>
       <Header />
-      <main className="h-full">{children}</main>
+      <main className="h-full bg-base-200">{children}</main>
     </>
   );
 };

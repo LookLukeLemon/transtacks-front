@@ -9,10 +9,10 @@ const Home: NextPage = () => {
       <Head>
         <title>Multi sender</title>
       </Head>
-      <div className="bg-base-200 h-full">
-        <div className="2xl:container mx-auto px-4 py-8 gap-8 flex flex-col h-full">
+      <div className="bg-base-200">
+        <div className="2xl:container mx-auto px-4 py-8 gap-4 md:gap-8 flex flex-col h-full">
           <InstructionAlert />
-          <div className="flex-1">
+          <div className="flex-1 ">
             <Orchestra />
           </div>
         </div>
