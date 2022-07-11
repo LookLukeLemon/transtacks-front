@@ -19,8 +19,9 @@ const RecipientInput = ({ atom, idx }: RecipientInputProps) => {
       <div className="hidden w-16 md:flex items-center justify-center bg-base-300 mr-1">
         {idx + 1}
       </div>
-      <span className="md:hidden">To</span>
+      <span className="md:hidden rounded-l-lg">To</span>
       <span className="hidden md:flex">Recipient</span>
+
       <input
         type="text"
         required
