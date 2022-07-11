@@ -38,19 +38,6 @@ const TokenImageDisplay = () => {
   );
 };
 
-const TokenSymbolDisplay = () => {
-  const selectedToken = useAtomValue(selectedTokenAtom);
-
-  const tokenLogo =
-    selectedToken === TOKEN_STX
-      ? TOKEN_STX_DISPLAY
-      : selectedToken === TOKEN_MIA_V2
-      ? TOKEN_MIA_V2_DISPLAY
-      : TOKEN_NYC_V2_DISPLAY;
-
-  return <span className="hidden md:flex">{tokenLogo}</span>;
-};
-
 const AmountInput = ({ atom }: AmountInputProps) => {
   const [item, setItem] = useAtom(atom);
 
@@ -70,7 +57,6 @@ const AmountInput = ({ atom }: AmountInputProps) => {
         value={item.amount}
         onChange={handleChangeAmount}
       />
-      <TokenSymbolDisplay />
     </label>
   );
 };
