@@ -93,7 +93,7 @@ const Favicon = () => {
         name="twitter:description"
         content="Send multiple transactions at once"
       />
-      <meta name="twitter:image" content="/images/ms-stacks.png" />
+      <meta name="twitter:image" content="/images/ms-stacks-1.png" />
       <meta name="twitter:creator" content="Dope" />
       <meta property="og:type" content="website" />
       <meta property="og:title" content="Multi sender" />
@@ -103,7 +103,7 @@ const Favicon = () => {
       />
       <meta property="og:locale" content="en_US" />
       <meta property="og:site_name" content="Multi sender" />
-      <meta property="og:image" content="/images/ms-stacks.png" />
+      <meta property="og:image" content="/images/ms-stacks-1.png" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content="Multi sender" />
