@@ -87,13 +87,13 @@ const Favicon = () => {
       />
       <meta name="theme-color" content="#ffffff" />
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:url" content="https://www.infinitysquare.io" />
+      <meta name="twitter:url" content="https://multi-send-dope.netlify.app/" />
       <meta name="twitter:title" content="Multi sender" />
       <meta
         name="twitter:description"
         content="Send multiple transactions at once"
       />
-      <meta name="twitter:image" content="/images/thumbnail.png" />
+      <meta name="twitter:image" content="/images/ms-stacks.png" />
       <meta name="twitter:creator" content="Dope" />
       <meta property="og:type" content="website" />
       <meta property="og:title" content="Multi sender" />
@@ -103,11 +103,11 @@ const Favicon = () => {
       />
       <meta property="og:locale" content="en_US" />
       <meta property="og:site_name" content="Multi sender" />
-      <meta property="og:image" content="/images/thumbnail.png" />
+      <meta property="og:image" content="/images/ms-stacks.png" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content="Multi sender" />
-      <meta property="og:url" content="https://www.infinitysquare.io" />
+      <meta property="og:url" content="https://multi-send-dope.netlify.app/" />
     </>
   );
 };
