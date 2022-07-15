@@ -72,10 +72,10 @@ const Favicon = () => {
       />
       <link rel="shortcut icon" href="/favicon/favicon.ico" />
       <link rel="manifest" href="/manifest.json" />
-      <meta name="application-name" content="Multi sender dope" />
+      <meta name="application-name" content="Transtacks dope" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-      <meta name="apple-mobile-web-app-title" content="Multi sender dope" />
+      <meta name="apple-mobile-web-app-title" content="Transtacks dope" />
       <meta name="description" content="Send multiple transactions at once" />
       <meta name="format-detection" content="telephone=no" />
       <meta name="mobile-web-app-capable" content="yes" />
@@ -88,7 +88,7 @@ const Favicon = () => {
       <meta name="theme-color" content="#ffffff" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:url" content="https://multi-send-dope.netlify.app/" />
-      <meta name="twitter:title" content="Multi sender" />
+      <meta name="twitter:title" content="Transtacks" />
       <meta
         name="twitter:description"
         content="Send multiple transactions at once"
@@ -96,17 +96,17 @@ const Favicon = () => {
       <meta name="twitter:image" content="/images/ms-stacks-1.png" />
       <meta name="twitter:creator" content="Dope" />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content="Multi sender" />
+      <meta property="og:title" content="Transtacks" />
       <meta
         property="og:description"
         content="Send multiple transactions at once"
       />
       <meta property="og:locale" content="en_US" />
-      <meta property="og:site_name" content="Multi sender" />
+      <meta property="og:site_name" content="Transtacks" />
       <meta property="og:image" content="/images/ms-stacks-1.png" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content="Multi sender" />
+      <meta property="og:image:alt" content="Transtacks" />
       <meta property="og:url" content="https://multi-send-dope.netlify.app/" />
     </>
   );

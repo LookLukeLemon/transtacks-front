@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import UserConnectButton from "./UserConnectButton";
-import LogoImage from "public/images/send.svg";
+import LogoImage from "public/images/transtacks.svg";
 
 const Header = () => {
   return (
@@ -12,7 +12,7 @@ const Header = () => {
             <div className="relative h-5 w-5">
               <Image src={LogoImage} alt="" layout="fill" objectFit="cover" />
             </div>
-            Multi Sender
+            Transtacks
           </a>
         </div>
         <div className="flex-none">

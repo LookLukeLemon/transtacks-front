@@ -7,6 +7,11 @@ import { useConnect, userDataState, userSessionState } from "lib/auth";
 import { useAtomValue, useSetAtom } from "jotai";
 import { useEffect } from "react";
 import { ToastContainer } from "react-toastify";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
+import Head from "next/head";
+
+const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { authOptions } = useConnect();
@@ -22,12 +27,25 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [userSession, setUserData]);
 
   return (
-    <Connect authOptions={authOptions}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-      <ToastContainer />
-    </Connect>
+    <>
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=3.0"
+        />
+
+        <title>Mixtacks</title>
+      </Head>
+      <QueryClientProvider client={queryClient}>
+        <Connect authOptions={authOptions}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+          <ToastContainer />
+        </Connect>
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
+    </>
   );
 }
 

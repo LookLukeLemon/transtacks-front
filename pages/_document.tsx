@@ -7,7 +7,7 @@ export default function Document() {
       <Head>
         <Favicon />
       </Head>
-      <body className="min-h-screen">
+      <body id="_body" className="min-h-screen">
         <Main />
         <NextScript />
       </body>

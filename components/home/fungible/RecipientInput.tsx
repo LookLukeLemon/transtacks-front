@@ -1,9 +1,9 @@
-import { RecipientAndAmountPair } from "common/store";
+import { RecipientAndFTPair } from "common/store";
 import { PrimitiveAtom, useAtom } from "jotai";
 import React from "react";
 
 export type RecipientInputProps = {
-  atom: PrimitiveAtom<RecipientAndAmountPair>;
+  atom: PrimitiveAtom<RecipientAndFTPair>;
   idx: number;
 };
 
@@ -15,18 +15,16 @@ const RecipientInput = ({ atom, idx }: RecipientInputProps) => {
   };
 
   return (
-    <label className="input-group input-group-sm md:input-group-md md:col-span-2">
-      <div className="hidden w-16 md:flex items-center justify-center bg-base-300 mr-1">
+    <label className="input-group input-group-sm md:input-group-md">
+      <div className="w-16 flex items-center justify-center bg-base-200 mr-1">
         {idx + 1}
       </div>
-      <span className="md:hidden rounded-l-lg">To</span>
-      <span className="hidden md:flex">Recipient</span>
 
       <input
         type="text"
         required
-        placeholder="e.g. ST3WD1H8FR8X5P5EHW9JV2R74RDG2YGYCY4MB0ZV6"
-        className="input w-full input-sm md:input-md"
+        placeholder="Recipient"
+        className="input w-full input-sm md:input-md bg-base-200"
         value={item.recipient}
         onChange={handleChangeRecipient}
       />

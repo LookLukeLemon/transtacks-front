@@ -18,8 +18,9 @@ const InstructionAlert = () => {
           ></path>
         </svg>
         <span>
-          {`Double-check the recipient's address and amount. Once sent, a
-          transaction cannot be rollback.`}
+          {`Transfer all tokens in the stacks ecosystem at once. Even transfer NFT together.`}
+          {/* {`Double-check the recipient's address and amount. Once sent, a
+          transaction cannot be rollback.`} */}
         </span>
       </div>
     </div>
