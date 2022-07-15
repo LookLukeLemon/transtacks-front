@@ -2,16 +2,23 @@ import { atom } from "jotai";
 import type { PrimitiveAtom } from "jotai";
 
 import {
+  SUPPORT_TOKENS,
+  TOKEN_ALEX,
+  TOKEN_BANANA,
+  TOKEN_DIKO,
+  TOKEN_LDN,
   TOKEN_MIA_V2,
   TOKEN_NYC_V2,
+  TOKEN_SLM,
   TOKEN_STX,
   TOKEN_USDA,
+  TOKEN_WELSH,
 } from "common/Constants";
 
 export const DefaultStxPair: RecipientAndFTPair = {
   recipient: "",
   amount: "",
-  token: TOKEN_STX,
+  token: SUPPORT_TOKENS.find((t) => t.value === TOKEN_STX),
   decimals: 6,
   order: 0,
 };
@@ -19,7 +26,7 @@ export const DefaultStxPair: RecipientAndFTPair = {
 export const DefaultMiaV2Pair: RecipientAndFTPair = {
   recipient: "",
   amount: "",
-  token: TOKEN_MIA_V2,
+  token: SUPPORT_TOKENS.find((t) => t.value === TOKEN_MIA_V2),
   decimals: 6,
   order: 1,
 };
@@ -27,7 +34,7 @@ export const DefaultMiaV2Pair: RecipientAndFTPair = {
 export const DefaultNycV2Pair: RecipientAndFTPair = {
   recipient: "",
   amount: "",
-  token: TOKEN_NYC_V2,
+  token: SUPPORT_TOKENS.find((t) => t.value === TOKEN_NYC_V2),
   decimals: 6,
   order: 1,
 };
@@ -35,13 +42,61 @@ export const DefaultNycV2Pair: RecipientAndFTPair = {
 export const DefaultUsdaPair: RecipientAndFTPair = {
   recipient: "",
   amount: "",
-  token: TOKEN_USDA,
+  token: SUPPORT_TOKENS.find((t) => t.value === TOKEN_USDA),
   decimals: 6,
   order: 1,
 };
 
-export const getDefaultPair = (token) => {
-  switch (token) {
+export const DefaultBananaPair: RecipientAndFTPair = {
+  recipient: "",
+  amount: "",
+  token: SUPPORT_TOKENS.find((t) => t.value === TOKEN_BANANA),
+  decimals: 6,
+  order: 1,
+};
+
+export const DefaultAlexPair: RecipientAndFTPair = {
+  recipient: "",
+  amount: "",
+  token: SUPPORT_TOKENS.find((t) => t.value === TOKEN_ALEX),
+  decimals: 8,
+  order: 1,
+};
+
+export const DefaultDikoPair: RecipientAndFTPair = {
+  recipient: "",
+  amount: "",
+  token: SUPPORT_TOKENS.find((t) => t.value === TOKEN_DIKO),
+  decimals: 6,
+  order: 1,
+};
+
+export const DefaultSlmPair: RecipientAndFTPair = {
+  recipient: "",
+  amount: "",
+  token: SUPPORT_TOKENS.find((t) => t.value === TOKEN_SLM),
+  decimals: 6,
+  order: 1,
+};
+
+export const DefaultLydianPair: RecipientAndFTPair = {
+  recipient: "",
+  amount: "",
+  token: SUPPORT_TOKENS.find((t) => t.value === TOKEN_LDN),
+  decimals: 6,
+  order: 1,
+};
+
+export const DefaultWelshPair: RecipientAndFTPair = {
+  recipient: "",
+  amount: "",
+  token: SUPPORT_TOKENS.find((t) => t.value === TOKEN_WELSH),
+  decimals: 6,
+  order: 1,
+};
+
+export const getDefaultPair = (token: SelectTokenType) => {
+  switch (token.value) {
     case TOKEN_STX:
       return DefaultStxPair;
     case TOKEN_MIA_V2:
@@ -50,6 +105,18 @@ export const getDefaultPair = (token) => {
       return DefaultNycV2Pair;
     case TOKEN_USDA:
       return DefaultUsdaPair;
+    case TOKEN_BANANA:
+      return DefaultBananaPair;
+    case TOKEN_ALEX:
+      return DefaultAlexPair;
+    case TOKEN_SLM:
+      return DefaultSlmPair;
+    case TOKEN_DIKO:
+      return DefaultDikoPair;
+    case TOKEN_LDN:
+      return DefaultLydianPair;
+    case TOKEN_WELSH:
+      return DefaultWelshPair;
     default:
       throw new Error("Not supported token");
   }
@@ -58,7 +125,7 @@ export const getDefaultPair = (token) => {
 export type RecipientAndFTPair = {
   recipient: string;
   amount: string;
-  token: string;
+  token: SelectTokenType;
   decimals: number;
   order: number;
 };
@@ -81,7 +148,13 @@ export type RemoveFungibleFn = (
   item: PrimitiveAtom<RecipientAndFTPair>
 ) => void;
 
-export const selectedTokenAtom = atom(TOKEN_STX);
+export type SelectTokenType = {
+  image: string;
+  display: string;
+  value: string;
+};
+
+export const selectedTokenAtom = atom<SelectTokenType>(SUPPORT_TOKENS[0]);
 export const recipientAndFTPairsAtom = atom<
   PrimitiveAtom<RecipientAndFTPair>[]
 >([]);

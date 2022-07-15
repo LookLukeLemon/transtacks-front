@@ -138,9 +138,10 @@ const useContract = () => {
     const recipients = [];
     const firstPair = destructuredPair[0];
     const { token, decimals } = firstPair;
-    const assetInfo = AssetInfoFactory.getAssetInfo(token);
-    const paymentAssetContractCV =
-      FungibleTokenPrincipalFactory.getPrincipal(token);
+    const assetInfo = AssetInfoFactory.getAssetInfo(token.value);
+    const paymentAssetContractCV = FungibleTokenPrincipalFactory.getPrincipal(
+      token.value
+    );
     let total = new BigNumber(0);
     destructuredPair.map((pair) => {
       const { recipient, amount } = pair;
@@ -302,25 +303,25 @@ const useContract = () => {
       .filter((pair) => {
         const { token } = pair;
         return SUPPORT_FUNGIBLE_TOKENS.some(
-          (t) => t === token || TOKEN_STX === token
+          (t) => t === token.value || TOKEN_STX === token.value
         );
       })
       .sort((a, b) => a.order - b.order)
       .map((pair) => {
         const { recipient, amount, token, decimals } = pair;
 
-        if (!recipientsMap.get(token)) {
-          if (token === TOKEN_STX) {
-            recipientsMap.set(token, {
+        if (!recipientsMap.get(token.value)) {
+          if (token.value === TOKEN_STX) {
+            recipientsMap.set(token.value, {
               decimals,
               total: new BigNumber(0),
               recipients: [],
             });
           } else {
             const paymentAssetContractCV =
-              FungibleTokenPrincipalFactory.getPrincipal(token);
+              FungibleTokenPrincipalFactory.getPrincipal(token.value);
 
-            recipientsMap.set(token, {
+            recipientsMap.set(token.value, {
               decimals,
               total: new BigNumber(0),
               recipients: [],
@@ -331,13 +332,13 @@ const useContract = () => {
           }
         }
 
-        recipientsMap.set(token, {
+        recipientsMap.set(token.value, {
           decimals,
-          ...recipientsMap.get(token),
-          total: recipientsMap.get(token).total.plus(amount),
+          ...recipientsMap.get(token.value),
+          total: recipientsMap.get(token.value).total.plus(amount),
           recipients: [
-            ...recipientsMap.get(token).recipients,
-            token === TOKEN_STX
+            ...recipientsMap.get(token.value).recipients,
+            token.value === TOKEN_STX
               ? tupleCV({
                   amount: uintCV(
                     new BigNumber(amount)
@@ -418,17 +419,17 @@ const useContract = () => {
     try {
       const isOnlyStx = destructuredPair.every((pair) => {
         const { token } = pair;
-        return token === TOKEN_STX;
+        return token.value === TOKEN_STX;
       });
 
       const isOnlyMia = destructuredPair.every((pair) => {
         const { token } = pair;
-        return token === TOKEN_MIA_V2;
+        return token.value === TOKEN_MIA_V2;
       });
 
       const isOnlyNyc = destructuredPair.every((pair) => {
         const { token } = pair;
-        return token === TOKEN_NYC_V2;
+        return token.value === TOKEN_NYC_V2;
       });
 
       const hasNFT = destructuredNFT.length > 0;

@@ -25,7 +25,7 @@ const NonFungibleTokenRegion = ({ onAddAll, onRemove }) => {
 
   return (
     <>
-      <div className="card card-compact md:card-normal bg-base-100 shadow-xl h-fit">
+      <div className="card card-compact overflow-visible md:card-normal bg-base-100 shadow-xl h-fit">
         <div className="card-body gap-8">
           <h2 className="card-title">
             <span className="flex-1">NFT</span>
