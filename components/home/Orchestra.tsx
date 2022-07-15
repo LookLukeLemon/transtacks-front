@@ -17,6 +17,7 @@ import {
   RemoveFungibleFn,
   RemoveNonFungibleFn,
   selectedTokenAtom,
+  SelectTokenType,
 } from "common/store";
 import { atom, useAtomValue, useSetAtom } from "jotai";
 import React from "react";
@@ -34,14 +35,14 @@ const Orchestra = () => {
   const destructuredFTPair = useAtomValue(destructuredFTPairAtom);
   const destructuredNFT = useAtomValue(destructuredNFTAtom);
 
-  const isAvailableFTLimit = (tokenToAdd) => {
+  const isAvailableFTLimit = (tokenToAdd: SelectTokenType) => {
     const tokenList = new Map();
     destructuredFTPair.map((p) => {
       const count = tokenList.get(p.token) ?? 0;
       tokenList.set(p.token, count + 1);
     });
 
-    const tokenCount = tokenList.get(tokenToAdd);
+    const tokenCount = tokenList.get(tokenToAdd.value);
     const isValidLimit = tokenList.size < LIMIT_FOR_FT;
 
     return tokenCount ? tokenCount < LIMIT_FOR_IN_FT : isValidLimit;

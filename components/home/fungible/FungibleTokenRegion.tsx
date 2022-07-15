@@ -1,10 +1,10 @@
-import { recipientAndFTPairsAtom } from "common/store";
-import { useAtomValue } from "jotai";
+import { recipientAndFTPairsAtom, selectedTokenAtom } from "common/store";
+import { useAtom, useAtomValue } from "jotai";
 import React from "react";
 import AddFtButton from "./AddFtButton";
 import AddFtTenButton from "./AddFtTenButton";
 import RecipientAndFTPairDisplay from "./RecipientAndFTPairDisplay";
-import SelectTokenGroup from "./SelectTokenGroup";
+import SelectTokenGroup from "../../common/SelectTokenGroup";
 
 const FungibleTokenRegion = ({
   onAdd,
@@ -13,16 +13,20 @@ const FungibleTokenRegion = ({
   isAvailableFTLimit,
 }) => {
   const recipientAndFTPairs = useAtomValue(recipientAndFTPairsAtom);
+  const [selectedToken, setSelectedToken] = useAtom(selectedTokenAtom);
 
   return (
-    <div className="card card-compact md:card-normal bg-base-100 shadow-xl h-full xl:col-span-2">
+    <div className="card card-compact overflow-visible md:card-normal bg-base-100 shadow-xl h-full xl:col-span-2">
       <div className="card-body gap-8">
         <h2 className="card-title ">
           <div className="flex flex-col sm:flex-row sm:items-center w-full gap-4">
             <span>TOKENS</span>
-            <div className="flex flex-1">
-              <div className="flex-1">
-                <SelectTokenGroup />
+            <div className="flex flex-1 gap-4">
+              <div className="flex-1 flex justify-end">
+                <SelectTokenGroup
+                  selectedToken={selectedToken}
+                  onChange={setSelectedToken}
+                />
               </div>
 
               <div className="flex gap-4">
