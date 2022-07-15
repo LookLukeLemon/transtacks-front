@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import "../styles/custom.css";
 import "react-toastify/dist/ReactToastify.css";
 import Layout from "../components/layout";
 import { Connect } from "@stacks/connect-react";
