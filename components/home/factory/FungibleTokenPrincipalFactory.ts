@@ -7,6 +7,9 @@ import {
   NYC_V2_CONTRACT,
   TOKEN_MIA_V2,
   TOKEN_NYC_V2,
+  TOKEN_USDA,
+  USDA_ADDRESS,
+  USDA_CONTRACT,
 } from "common/Constants";
 import { contractPrincipalCV } from "@stacks/transactions";
 
@@ -22,7 +25,8 @@ export class FungibleTokenPrincipalFactory {
         return contractPrincipalCV(MIA_V2_ADDRESS, MIA_V2_CONTRACT);
       case TOKEN_NYC_V2:
         return contractPrincipalCV(NYC_V2_ADDRESS, NYC_V2_CONTRACT);
-
+      case TOKEN_USDA:
+        return contractPrincipalCV(USDA_ADDRESS, USDA_CONTRACT);
       default: {
         throw new Error("Not supported token");
       }

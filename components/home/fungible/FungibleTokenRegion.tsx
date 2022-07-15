@@ -16,17 +16,19 @@ const FungibleTokenRegion = ({
 
   return (
     <div className="card card-compact md:card-normal bg-base-100 shadow-xl h-full xl:col-span-2">
-      <div className="card-body">
-        <h2 className="card-title gap-x-8">
-          TOKENS
-          <div className="flex flex-1">
-            <div className="flex-1">
-              <SelectTokenGroup />
-            </div>
+      <div className="card-body gap-8">
+        <h2 className="card-title ">
+          <div className="flex flex-col sm:flex-row sm:items-center w-full gap-4">
+            <span>TOKENS</span>
+            <div className="flex flex-1">
+              <div className="flex-1">
+                <SelectTokenGroup />
+              </div>
 
-            <div className="flex gap-4">
-              <AddFtButton onAdd={onAdd} />
-              <AddFtTenButton onAddTen={onAddTen} />
+              <div className="flex gap-4">
+                <AddFtButton onAdd={onAdd} />
+                <AddFtTenButton onAddTen={onAddTen} />
+              </div>
             </div>
           </div>
         </h2>

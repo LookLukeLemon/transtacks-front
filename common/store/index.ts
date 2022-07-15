@@ -1,7 +1,12 @@
 import { atom } from "jotai";
 import type { PrimitiveAtom } from "jotai";
 
-import { TOKEN_MIA_V2, TOKEN_NYC_V2, TOKEN_STX } from "common/Constants";
+import {
+  TOKEN_MIA_V2,
+  TOKEN_NYC_V2,
+  TOKEN_STX,
+  TOKEN_USDA,
+} from "common/Constants";
 
 export const DefaultStxPair: RecipientAndFTPair = {
   recipient: "",
@@ -27,6 +32,14 @@ export const DefaultNycV2Pair: RecipientAndFTPair = {
   order: 1,
 };
 
+export const DefaultUsdaPair: RecipientAndFTPair = {
+  recipient: "",
+  amount: "",
+  token: TOKEN_USDA,
+  decimals: 6,
+  order: 1,
+};
+
 export const getDefaultPair = (token) => {
   switch (token) {
     case TOKEN_STX:
@@ -35,6 +48,8 @@ export const getDefaultPair = (token) => {
       return DefaultMiaV2Pair;
     case TOKEN_NYC_V2:
       return DefaultNycV2Pair;
+    case TOKEN_USDA:
+      return DefaultUsdaPair;
     default:
       throw new Error("Not supported token");
   }

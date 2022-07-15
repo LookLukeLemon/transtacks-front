@@ -19,8 +19,7 @@ import {
   selectedTokenAtom,
 } from "common/store";
 import { atom, useAtomValue, useSetAtom } from "jotai";
-import { userAddressAtom } from "lib/auth";
-import React, { useCallback } from "react";
+import React from "react";
 import { toast } from "react-toastify";
 import FungibleTokenRegion from "./fungible/FungibleTokenRegion";
 import NonFungibleTokenRegion from "./non-fungible/NonFungibleTokenRegion";
@@ -29,7 +28,6 @@ import useContract from "./useContract";
 
 const Orchestra = () => {
   const { handleSendAll } = useContract();
-  const myAddress = useAtomValue(userAddressAtom);
   const selectedToken = useAtomValue(selectedTokenAtom);
   const setRecipientAndFTPairs = useSetAtom(recipientAndFTPairsAtom);
   const setRecipientAndNFTPairs = useSetAtom(recipientAndNFTPairsAtom);

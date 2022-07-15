@@ -1,11 +1,9 @@
 import Image from "next/image";
 import React from "react";
-import StxLogo from "public/images/stx.svg";
-import MiaLogo from "public/images/mia.svg";
-import NycLogo from "public/images/nyc.svg";
 import { PrimitiveAtom, useAtom } from "jotai";
 import { getDefaultPair, RecipientAndFTPair } from "common/store";
 import {
+  getLogoByToken,
   LIMIT_FOR_FT_MSG,
   SUPPORT_TOKENS,
   TOKEN_MIA_V2,
@@ -51,19 +49,17 @@ const AmountInput = ({ atom, isAvailableFTLimit }: AmountInputProps) => {
     setItem({ ...item, token: e.target.value, order: defaultPair.order });
   };
 
-  const tokenLogo =
-    item.token === TOKEN_STX
-      ? StxLogo
-      : item.token === TOKEN_MIA_V2
-      ? MiaLogo
-      : NycLogo;
-
   return (
     <label className="input-group input-group-sm md:input-group-md gap-x-1">
       <TokenImageDisplay token={item.token} onChange={handleChangeToken} />
       <span className="hidden md:flex bg-base-200">
         <div className="relative w-5 h-5">
-          <Image src={tokenLogo} layout="fill" objectFit="cover" alt="" />
+          <Image
+            src={getLogoByToken(item.token)}
+            layout="fill"
+            objectFit="cover"
+            alt=""
+          />
         </div>
       </span>
 

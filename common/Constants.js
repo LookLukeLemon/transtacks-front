@@ -1,12 +1,19 @@
+import StxLogo from "public/images/stx.svg";
+import MiaLogo from "public/images/mia.svg";
+import NycLogo from "public/images/nyc.svg";
+import UsdaLogo from "public/images/usda.svg";
+
 export const ENV_TESTNET = "testnet";
 export const ENV_MAINNET = "mainnet";
 
 export const TOKEN_STX = "stx";
 export const TOKEN_MIA_V2 = "mia-v2";
 export const TOKEN_NYC_V2 = "nyc-v2";
+export const TOKEN_USDA = "usda";
 export const TOKEN_STX_DISPLAY = "STX";
 export const TOKEN_MIA_V2_DISPLAY = "MIA";
 export const TOKEN_NYC_V2_DISPLAY = "NYC";
+export const TOKEN_USDA_DISPLAY = "USDA";
 
 export const MULTI_SEND_DEPLOYER_TESTNET =
   "ST376VXPZGBQC6W0B8XEKG6E6FZNN0PR0W4SKYKT7";
@@ -25,12 +32,16 @@ export const MIA_V2_ASSETNAME = "miamicoin";
 export const NYC_V2_ADDRESS = "SPSCWDV3RKV5ZRN1FQD84YE1NQFEDJ9R1F4DYQ11";
 export const NYC_V2_CONTRACT = "newyorkcitycoin-token-v2";
 export const NYC_V2_ASSETNAME = "newyorkcitycoin";
+export const USDA_ADDRESS = "SP2C2YFP12AJZB4MABJBAJ55XECVS7E4PMMZ89YZR";
+export const USDA_CONTRACT = "usda-token";
+export const USDA_ASSETNAME = "usda";
 
-export const SUPPORT_FUNGIBLE_TOKENS = [TOKEN_MIA_V2, TOKEN_NYC_V2];
+export const SUPPORT_FUNGIBLE_TOKENS = [TOKEN_MIA_V2, TOKEN_NYC_V2, TOKEN_USDA];
 export const SUPPORT_TOKENS = [
   { value: TOKEN_STX, display: TOKEN_STX_DISPLAY },
   { value: TOKEN_MIA_V2, display: TOKEN_MIA_V2_DISPLAY },
   { value: TOKEN_NYC_V2, display: TOKEN_NYC_V2_DISPLAY },
+  { value: TOKEN_USDA, display: TOKEN_USDA_DISPLAY },
 ];
 export const LIMIT_FOR_FT = 10;
 export const LIMIT_FOR_IN_FT = 400;
@@ -44,3 +55,18 @@ export const ACCOUNT_COLLECTED_EMPTY = "There are no NFTs found owened by you.";
 export const ACCOUNT_COLLECTED_INSTRUCTION =
   "If this is your first visit, log in to Infinity Square once to see the NFTs you own.";
 export const ACCOUNT_COLLECTED_PER_PAGE = 12;
+
+export const getLogoByToken = (token) => {
+  switch (token) {
+    case TOKEN_STX:
+      return StxLogo;
+    case TOKEN_MIA_V2:
+      return MiaLogo;
+    case TOKEN_NYC_V2:
+      return NycLogo;
+    case TOKEN_USDA:
+      return UsdaLogo;
+    default:
+      null;
+  }
+};
