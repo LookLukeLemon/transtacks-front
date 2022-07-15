@@ -87,13 +87,13 @@ const Favicon = () => {
       />
       <meta name="theme-color" content="#ffffff" />
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:url" content="https://multi-send-dope.netlify.app/" />
+      <meta name="twitter:url" content="https://transtacks.xyz" />
       <meta name="twitter:title" content="Transtacks" />
       <meta
         name="twitter:description"
         content="Send multiple transactions at once"
       />
-      <meta name="twitter:image" content="/images/ms-stacks-1.png" />
+      <meta name="twitter:image" content="/images/transtacks_thumb.png" />
       <meta name="twitter:creator" content="Dope" />
       <meta property="og:type" content="website" />
       <meta property="og:title" content="Transtacks" />
@@ -103,11 +103,11 @@ const Favicon = () => {
       />
       <meta property="og:locale" content="en_US" />
       <meta property="og:site_name" content="Transtacks" />
-      <meta property="og:image" content="/images/ms-stacks-1.png" />
+      <meta property="og:image" content="/images/transtacks_thumb.png" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content="Transtacks" />
-      <meta property="og:url" content="https://multi-send-dope.netlify.app/" />
+      <meta property="og:url" content="https://transtacks.xyz" />
     </>
   );
 };
