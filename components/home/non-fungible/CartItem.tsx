@@ -2,7 +2,7 @@ import { RecipientAndNFTPair, RemoveNonFungibleFn } from "common/store";
 import BaseImage from "components/common/BaseImage";
 import { PrimitiveAtom, useAtom } from "jotai";
 import React from "react";
-import RemoveNftButton from "./RemoveNFtButton";
+import RemoveNftButton from "./RemoveNftButton";
 
 type CartItemProps = {
   atom: PrimitiveAtom<RecipientAndNFTPair>;
@@ -24,7 +24,7 @@ const CartItem = ({ atom, onRemove }: CartItemProps) => {
       </div>
 
       <h2 className="text-xs flex flex-col w-20 justify-center md:justify-between h-8 md:h-12">
-        <span className="hidden md:flex truncate">{name}</span>
+        <span className="hidden md:block truncate">{name}</span>
         <div className="badge badge-warning">#{tokenId}</div>
       </h2>
 
