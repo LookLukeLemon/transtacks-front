@@ -11,6 +11,7 @@ import { ToastContainer } from "react-toastify";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import Head from "next/head";
+import Script from "next/script";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +38,24 @@ function MyApp({ Component, pageProps }: AppProps) {
 
         <title>Mixtacks</title>
       </Head>
+      <Script
+        defer
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_GA_ID}`}
+      />
+      <Script
+        defer
+        id="ga-script"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_GA_ID}');
+          `,
+        }}
+      />
       <QueryClientProvider client={queryClient}>
         <Connect authOptions={authOptions}>
           <Layout>
