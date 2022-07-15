@@ -2,8 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+html > body > div:first-child {
+  @apply min-h-screen h-screen;
+}
+
 @layer components {
-  html > body > div:first-child {
-    @apply min-h-screen h-screen;
+  .nft-items-grid-container {
+    @apply grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6;
+  }
+
+  .modal-content-wrapper {
+    min-height: calc(100vh - 128px);
+    max-height: calc(100vh - 128px);
   }
 }

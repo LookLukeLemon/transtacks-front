@@ -11,7 +11,7 @@ const UserConnectButton = () => {
   return useMemo(() => {
     return myAddress ? (
       <div className="dropdown dropdown-end">
-        <label tabIndex={0} className="btn rounded-full">
+        <label tabIndex={0} className="btn rounded-2xl">
           <div className="flex items-center space-x-2 truncate px-1 font-semibold">
             <BiWallet size={20} />
             <span>{truncateMiddle(myAddress, 4, 4)}</span>

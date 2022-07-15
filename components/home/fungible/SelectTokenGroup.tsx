@@ -1,4 +1,11 @@
-import { TOKEN_MIA_V2, TOKEN_NYC_V2, TOKEN_STX } from "common/Constants";
+import {
+  TOKEN_MIA_V2,
+  TOKEN_MIA_V2_DISPLAY,
+  TOKEN_NYC_V2,
+  TOKEN_NYC_V2_DISPLAY,
+  TOKEN_STX,
+  TOKEN_STX_DISPLAY,
+} from "common/Constants";
 import { selectedTokenAtom } from "common/store";
 import { useAtom } from "jotai";
 import React from "react";
@@ -14,13 +21,14 @@ const SelectTokenGroup = () => {
 
   return useMemo(
     () => (
-      <div className="btn-group ">
+      <div className="btn-group">
         <button
           className={classNames(
-            "btn btn-sm md:btn-md gap-4",
-            selectedToken === TOKEN_STX && "btn-warning "
+            "btn btn-sm md:btn-md gap-4 bg-base-200",
+            selectedToken === TOKEN_STX && "!btn-warning text-white"
           )}
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
             setSelectedToken(TOKEN_STX);
           }}
         >
@@ -28,14 +36,15 @@ const SelectTokenGroup = () => {
             <Image src={StxLogo} alt="" layout="fill" objectFit="cover" />
           </div>
 
-          <div className="hidden md:flex">STX</div>
+          <div className="hidden md:flex">{TOKEN_STX_DISPLAY}</div>
         </button>
         <button
           className={classNames(
-            "btn btn-sm md:btn-md gap-4",
-            selectedToken === TOKEN_MIA_V2 && "btn-warning"
+            "btn btn-sm md:btn-md gap-4 bg-base-200",
+            selectedToken === TOKEN_MIA_V2 && "!btn-warning text-white"
           )}
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
             setSelectedToken(TOKEN_MIA_V2);
           }}
         >
@@ -43,14 +52,15 @@ const SelectTokenGroup = () => {
             <Image src={MiaLogo} alt="" layout="fill" objectFit="cover" />
           </div>
 
-          <div className="hidden md:flex">MIA-v2</div>
+          <div className="hidden md:flex">{TOKEN_MIA_V2_DISPLAY}</div>
         </button>
         <button
           className={classNames(
-            "btn btn-sm md:btn-md gap-4",
-            selectedToken === TOKEN_NYC_V2 && "btn-warning"
+            "btn btn-sm md:btn-md gap-4 bg-base-200",
+            selectedToken === TOKEN_NYC_V2 && "!btn-warning text-white"
           )}
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
             setSelectedToken(TOKEN_NYC_V2);
           }}
         >
@@ -58,7 +68,7 @@ const SelectTokenGroup = () => {
             <Image src={NycLogo} alt="" layout="fill" objectFit="cover" />
           </div>
 
-          <div className="hidden md:flex">NYC-v2</div>
+          <div className="hidden md:flex">{TOKEN_NYC_V2_DISPLAY}</div>
         </button>
       </div>
     ),

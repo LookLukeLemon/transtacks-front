@@ -7,7 +7,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Multi sender</title>
+        <title>Transtacks</title>
       </Head>
       <div className="bg-base-200">
         <div className="2xl:container mx-auto px-4 py-8 gap-4 md:gap-8 flex flex-col h-full">
