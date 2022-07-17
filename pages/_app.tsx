@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="width=device-width, initial-scale=1.0, maximum-scale=3.0"
         />
 
-        <title>Mixtacks</title>
+        <title>Transtacks</title>
       </Head>
       <Script
         defer
