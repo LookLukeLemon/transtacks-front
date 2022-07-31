@@ -4,12 +4,12 @@
   <tr>
     <td>
       <a href="https://transtacks.xyz/" target="_blank">
-        <img src="transtacks/transtacks_1.jpg" />
+        <img src="public/images/transtacks_1.jpg" />
       </a>
     </td>
     <td>
       <a href="https://transtacks.xyz/" target="_blank">
-        <img src="transtacks/transtacks_2.jpg" />
+        <img src="public/images/transtacks_2.jpg" />
       </a>
     </td>
   </tr>
