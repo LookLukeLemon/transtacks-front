@@ -1,5 +1,7 @@
+### 👏 Transtacks Architecture
+![Transtacks](public/transtacks_architecture.png)
+
 ### 🔥 Transtacks - Transfer Stacks coin, fungible tokens and NFT all together at once
-<br/>
 <table>
   <tr>
     <td>
