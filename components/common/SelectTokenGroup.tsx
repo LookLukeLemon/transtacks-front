@@ -1,12 +1,11 @@
-import { SUPPORT_TOKENS } from "common/Constants";
-import React, { Fragment } from "react";
-import { useMemo } from "react";
-import { Listbox, Transition } from "@headlessui/react";
-import { ChevronDownIcon, CheckIcon } from "@heroicons/react/solid";
+import {Listbox, Transition} from "@headlessui/react";
+import {CheckIcon, ChevronDownIcon} from "@heroicons/react/solid";
+import {SUPPORT_TOKENS} from "common/Constants";
 import BaseImage from "components/common/BaseImage";
-import { classNames } from "utils";
+import {Fragment, useMemo} from "react";
+import {classNames} from "utils";
 
-const SelectTokenGroup = ({ selectedToken, onChange, style = "" }) => {
+const SelectTokenGroup = ({selectedToken, onChange, style = ""}) => {
   return useMemo(
     () => (
       <div className="w-20 md:w-36 text-xs md:text-sm">
@@ -45,14 +44,14 @@ const SelectTokenGroup = ({ selectedToken, onChange, style = "" }) => {
                 {SUPPORT_TOKENS.map((token, idx) => (
                   <Listbox.Option
                     key={token.value}
-                    className={({ active }) =>
+                    className={({active}) =>
                       `relative cursor-pointer select-none py-2.5 pl-10 pr-4 ${
                         active ? "bg-warning text-base-300" : "text-white"
                       }`
                     }
                     value={token}
                   >
-                    {({ selected }) => (
+                    {({selected}) => (
                       <>
                         <span
                           className={`flex gap-2 truncate ${
@@ -86,7 +85,7 @@ const SelectTokenGroup = ({ selectedToken, onChange, style = "" }) => {
         </Listbox>
       </div>
     ),
-    [selectedToken, onChange]
+    [selectedToken, onChange, style]
   );
 };
 
